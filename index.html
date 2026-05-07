@@ -5,111 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lung ta lung lung — Memory Plushies</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Ảnh thú bông từ thư mục images/ */
-    img.plushie-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: inherit;
-      display: block;
-    }
-
-    /* Google Form link card */
-    .form-link-wrap {
-      width: 100%;
-      max-width: 560px;
-      margin: 2.5rem auto 0;
-    }
-
-    .form-link-card {
-      background: rgba(246, 237, 227, 0.05);
-      border: 1px solid rgba(217, 184, 168, 0.3);
-      backdrop-filter: blur(16px);
-      border-radius: 28px;
-      padding: 3rem 2.5rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-
-    .form-link-card::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(217,184,168,0.1) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    .form-link-card:hover {
-      border-color: rgba(217, 184, 168, 0.55);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 40px rgba(217,184,168,0.1);
-      transform: translateY(-4px);
-    }
-
-    .form-link-icon {
-      font-size: 3.5rem;
-      margin-bottom: 1.2rem;
-      animation: floatLoader 3s ease-in-out infinite;
-    }
-
-    .form-link-title {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.45rem;
-      color: #F6EDE3;
-      margin-bottom: 1rem;
-    }
-
-    .form-link-desc {
-      font-size: 0.9rem;
-      color: rgba(240,230,218,0.65);
-      line-height: 1.85;
-      margin-bottom: 2rem;
-    }
-
-    .form-link-desc em {
-      color: rgba(217,184,168,0.8);
-    }
-
-    .btn-form-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      padding: 1rem 2.6rem;
-      background: linear-gradient(135deg, #D9B8A8, #c4987f, #a87560);
-      color: #2D3142;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.06em;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 30px rgba(217,184,168,0.35);
-      text-decoration: none;
-    }
-
-    .btn-form-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 44px rgba(217,184,168,0.5);
-    }
-
-    .btn-arrow {
-      font-size: 1.1rem;
-      transition: transform 0.3s ease;
-    }
-
-    .btn-form-link:hover .btn-arrow {
-      transform: translateX(5px);
-    }
-
-    .form-link-note {
-      margin-top: 1.4rem;
-      font-size: 0.72rem;
-      color: rgba(240,230,218,0.35);
-      letter-spacing: 0.1em;
-    }
-  </style>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -225,7 +120,7 @@
 
       <div class="plushie-card">
         <div class="plushie-img-wrap">
-          <img class="plushie-img" src="images/misu.svg" alt="Misu - Thú bông Chữa Lành" />
+          <img class="plushie-img" src="images/misu.jpg" alt="Misu - Thú bông Chữa Lành" />
           <span class="plushie-emotion-tag">Chữa Lành</span>
         </div>
         <div class="plushie-info">
@@ -248,7 +143,7 @@
       <div class="plushie-card featured">
         <div class="plushie-badge">Được Yêu Nhất</div>
         <div class="plushie-img-wrap">
-          <img class="plushie-img" src="images/lumi.svg" alt="Lumi - Thú bông An Ủi" />
+          <img class="plushie-img" src="images/lumi.jpg" alt="Lumi - Thú bông An Ủi" />
           <span class="plushie-emotion-tag">An Ủi</span>
         </div>
         <div class="plushie-info">
@@ -270,7 +165,7 @@
 
       <div class="plushie-card">
         <div class="plushie-img-wrap">
-          <img class="plushie-img" src="images/noel.svg" alt="Noel - Thú bông Nhớ Ai Đó" />
+          <img class="plushie-img" src="images/noel.jpg" alt="Noel - Thú bông Nhớ Ai Đó" />
           <span class="plushie-emotion-tag">Nhớ Ai Đó</span>
         </div>
         <div class="plushie-info">
