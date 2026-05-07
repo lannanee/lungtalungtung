@@ -90,13 +90,16 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealTargets.forEach(el => revealObserver.observe(el));
 
-// ── MUSIC TOGGLE ────────────────────────────────
+// ── MUSIC TOGGLE (nhạc nền) ──────────────────────
 const musicToggle = document.getElementById('musicToggle');
 const bgMusic = document.getElementById('bgMusic');
 let musicPlaying = false;
 
 if (musicToggle && bgMusic) {
   musicToggle.addEventListener('click', () => {
+    // Nếu đang phát nhạc cảm xúc thì dừng trước
+    stopEmotionMusic();
+
     if (musicPlaying) {
       bgMusic.pause();
       musicToggle.style.color = 'rgba(217,184,168,0.4)';
@@ -110,6 +113,48 @@ if (musicToggle && bgMusic) {
     musicPlaying = !musicPlaying;
   });
 }
+
+// ── EMOTION MUSIC ────────────────────────────────
+const emotionMusic = document.getElementById('emotionMusic');
+let activeEmotionCard = null;
+
+function stopEmotionMusic() {
+  if (emotionMusic) {
+    emotionMusic.pause();
+    emotionMusic.currentTime = 0;
+  }
+  if (activeEmotionCard) {
+    activeEmotionCard.classList.remove('emotion-active');
+    activeEmotionCard = null;
+  }
+}
+
+document.querySelectorAll('.emotion-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const musicSrc = card.getAttribute('data-music');
+    if (!musicSrc) return;
+
+    // Nếu nhấn lại card đang phát → dừng
+    if (activeEmotionCard === card) {
+      stopEmotionMusic();
+      // Khôi phục nhạc nền nếu đang bật
+      if (musicPlaying) bgMusic.play().catch(() => {});
+      return;
+    }
+
+    // Dừng nhạc nền khi phát nhạc cảm xúc
+    bgMusic.pause();
+
+    stopEmotionMusic();
+
+    emotionMusic.src = musicSrc;
+    emotionMusic.volume = 0.5;
+    emotionMusic.play().catch(() => {});
+
+    activeEmotionCard = card;
+    card.classList.add('emotion-active');
+  });
+});
 
 // ── FORM SUBMISSION ──────────────────────────────
 const orderForm = document.getElementById('orderForm');
