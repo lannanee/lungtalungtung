@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lung ta lung tung 🧸 — Thú Bông & Đồ Thủ Công</title>
+  <meta name="description" content="Shop thú bông và đồ thủ công handmade từ Hà Nội — móc khoá len, hoa len, và nhiều hơn nữa. Đặt hàng dễ dàng qua form online."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <!-- ── Liên kết file CSS riêng ── -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ══ THANH ĐIỀU HƯỚNG ══ -->
+<nav>
+  <div class="nav-logo"><span>🧸</span> Lung ta lung tung</div>
+  <ul class="nav-links">
+    <li><a href="#thu-bong">Thú Bông</a></li>
+    <li><a href="#thu-cong">Đồ Thủ Công</a></li>
+    <li><a href="#huong-dan">Cách Đặt Hàng</a></li>
+    <li><a href="#dat-hang" class="btn nav-cta">Đặt Hàng Ngay</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-badge">✨ Handmade với tình yêu thương</div>
+  <h1>Thú Bông <em>Dễ Thương</em> &amp; Đồ Thủ Công Handmade</h1>
+  <p>Mỗi sản phẩm đều được làm thủ công tỉ mỉ — từ thú bông mềm mại đến móc khoá len và hoa len xinh xắn.</p>
+  <div class="hero-btns">
+    <a href="#thu-bong" class="btn btn-primary">🐻 Xem Thú Bông</a>
+    <a href="#thu-cong" class="btn btn-secondary">🌸 Xem Đồ Thủ Công</a>
+  </div>
+  <div class="hero-floats">
+    <div class="float-chip">🚚 Miễn phí ship từ 500k</div>
+    <div class="float-chip">🎁 Gói quà theo yêu cầu</div>
+    <div class="float-chip">🎨 Nhận đơn đặt riêng</div>
+  </div>
+</section>
+
+<!-- ══ TÍNH NĂNG NỔI BẬT ══ -->
+<div class="features-strip">
+  <div class="feature-item">
+    <div class="feature-icon">🧶</div>
+    <div class="feature-text">
+      <strong>100% Thủ Công</strong>
+      <span>Mỗi sản phẩm đều tự tay làm</span>
+    </div>
+  </div>
+  <div class="feature-item">
+    <div class="feature-icon">🎨</div>
+    <div class="feature-text">
+      <strong>Thiết Kế Riêng</strong>
+      <span>Đặt hàng theo ý thích của bạn</span>
+    </div>
+  </div>
+  <div class="feature-item">
+    <div class="feature-icon">📦</div>
+    <div class="feature-text">
+      <strong>Đóng Gói Cẩn Thận</strong>
+      <span>Hàng được bọc kỹ lưỡng, an toàn</span>
+    </div>
+  </div>
+  <div class="feature-item">
+    <div class="feature-icon">💌</div>
+    <div class="feature-text">
+      <strong>Đặt Hàng Qua Form</strong>
+      <span>Nhanh chóng, tiện lợi</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ THÚ BÔNG ══ -->
+<section id="thu-bong">
+  <div class="section-header">
+    <div class="section-label">🐻 Danh Mục</div>
+    <h2>Thú Bông</h2>
+    <p>Mềm mại, đáng yêu và đầy cá tính — tìm người bạn mới của bạn ngay tại đây.</p>
+  </div>
+  <div class="product-grid">
+
+    <!-- ── Sản phẩm 1: Gấu Bông Cổ Điển ── -->
+    <div class="product-card">
+      <div class="product-img">
+        <!--
+          ĐẶT ẢNH: Lưu file ảnh vào thư mục  images/
+          Ví dụ: images/gau-bong.jpg
+          Đổi src thành:  src="images/gau-bong.jpg"
+        -->
+        <img src="images/gau-bong.jpg"
+             alt="Gấu Bông Cổ Điển"
+             onerror="this.style.display='none'"/>
+        <div class="tag moi">Mới</div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Gấu Bông Cổ Điển</div>
+        <div class="product-desc">Bông cotton cao cấp, mắt cúc xinh, có 3 kích cỡ. Quà tặng hoàn hảo cho mọi dịp.</div>
+        <div class="product-footer">
+          <div class="product-price">180.000 đ</div>
+          <button class="product-btn"
+                  onclick="moModal('Gấu Bông Cổ Điển', '180.000 đ', 'thu-bong')">Đặt Hàng</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Sản phẩm 2: Thỏ Tai Dài ── -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/tho-tai-dai.jpg"
+             alt="Thỏ Tai Dài"
+             onerror="this.style.display='none'"/>
+        <div class="tag">Phổ Biến</div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Thỏ Tai Dài</div>
+        <div class="product-desc">Thỏ pastel với tai dài mềm và nơ nhung. Có sẵn màu nâu, hồng, tím lavender và xanh mint.</div>
+        <div class="product-footer">
+          <div class="product-price">220.000 đ</div>
+          <button class="product-btn"
+                  onclick="moModal('Thỏ Tai Dài', '220.000 đ', 'thu-bong')">Đặt Hàng</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Sản phẩm 3: Ếch Ngủ Gật ── -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/ech-ngu-gat.jpg"
+             alt="Ếch Ngủ Gật"
+             onerror="this.style.display='none'"/>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Ếch Ngủ Gật</div>
+        <div class="product-desc">Ếch bụ bẫm với đôi mắt thêu nhắm nghiền — người bạn để bàn được yêu thích nhất.</div>
+        <div class="product-footer">
+          <div class="product-price">160.000 đ</div>
+          <button class="product-btn"
+                  onclick="moModal('Ếch Ngủ Gật', '160.000 đ', 'thu-bong')">Đặt Hàng</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Sản phẩm 4: Mèo Mini ── -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/meo-mini.jpg"
+             alt="Mèo Mini"
+             onerror="this.style.display='none'"/>
+        <div class="tag moi">Mới</div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Mèo Mini</div>
+        <div class="product-desc">Mèo bông nhỏ xinh với chiếc khăn kẻ sọc. Đặt trang trí kệ hoặc treo túi đều cực cute.</div>
+        <div class="product-footer">
+          <div class="product-price">145.000 đ</div>
+          <button class="product-btn"
+                  onclick="moModal('Mèo Mini', '145.000 đ', 'thu-bong')">Đặt Hàng</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ ĐỒ THỦ CÔNG ══ -->
+<section id="thu-cong" class="section-handmade">
+  <div class="section-header">
+    <div class="section-label" style="background: var(--sage); color: var(--sage-dark);">🌸 Thủ Công</div>
+    <h2>Đồ Thủ Công Handmade</h2>
+    <p>Móc khoá len, hoa khô & nhiều hơn nữa — mỗi sản phẩm đều là duy nhất.</p>
+  </div>
+  <div class="product-grid">
+
+    <!-- ── Sản phẩm 5: Móc Khoá Gấu Len ── -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/moc-khoa-gau-len.jpg"
+             alt="Móc Khoá Gấu Len"
+             onerror="this.style.display='none'"/>
+        <div class="tag handmade">Thủ Công</div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Móc Khoá Gấu Len</div>
+        <div class="product-desc">Gấu len nhỏ xinh felting thủ công. Chọn màu tuỳ ý — có thể cá nhân hoá hoàn toàn!</div>
+        <div class="product-footer">
+          <div class="product-price">75.000 đ</div>
+          <button class="product-btn sage-btn"
+                  onclick="moModal('Móc Khoá Gấu Len', '75.000 đ', 'thu-cong')">Đặt Hàng</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Sản phẩm 6: Bó Hoa Khô ── -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/bo-hoa-kho.jpg"
+             alt="Bó Hoa Khô"
+             onerror="this.style.display='none'"/>
+        <div class="tag handmade">Thủ Công</div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Bó Hoa Khô</div>
+        <div class="product-desc">Hoa khô bảo quản buộc nơ lụa sang trọng. Trang trí nhà hoặc làm quà đều tuyệt vời.</div>
+        <div class="product-footer">
+          <div class="product-price">130.000 đ</div>
+          <button class="product-btn sage-btn"
+                  onclick="moModal('Bó Hoa Khô', '130.000 đ', 'thu-cong')">Đặt Hàng</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Sản phẩm 7: Cài Áo Hoa Len ── -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/cai-ao-hoa-len.jpg"
+             alt="Cài Áo Hoa Len"
+             onerror="this.style.display='none'"/>
+        <div class="tag handmade">Thủ Công</div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Cài Áo Hoa Len</div>
+        <div class="product-desc">Hoa móc len thủ công làm cài áo. Quà tặng dễ thương — đủ màu sắc theo yêu cầu.</div>
+        <div class="product-footer">
+          <div class="product-price">65.000 đ</div>
+          <button class="product-btn sage-btn"
+                  onclick="moModal('Cài Áo Hoa Len', '65.000 đ', 'thu-cong')">Đặt Hàng</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CÁCH ĐẶT HÀNG ══ -->
+<section id="huong-dan">
+  <div class="section-header">
+    <div class="section-label">📋 Quy Trình</div>
+    <h2>Cách Đặt Hàng</h2>
+    <p>Chỉ vài bước đơn giản từ lúc chọn đến khi nhận hàng.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-icon">🛍️</div>
+      <div class="step-number">1</div>
+      <h3>Chọn Sản Phẩm</h3>
+      <p>Chọn món bạn thích từ danh mục Thú Bông hoặc Đồ Thủ Công ở trên.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-icon">📝</div>
+      <div class="step-number">2</div>
+      <h3>Điền Form</h3>
+      <p>Nhấn "Đặt Hàng", điền tên, địa chỉ và yêu cầu riêng (nếu có).</p>
+    </div>
+    <div class="step-card">
+      <div class="step-icon">💌</div>
+      <div class="step-number">3</div>
+      <h3>Xác Nhận Đơn</h3>
+      <p>Bạn sẽ nhận xác nhận qua email hoặc Zalo trong vòng 24 giờ.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-icon">📦</div>
+      <div class="step-number">4</div>
+      <h3>Nhận Hàng &amp; Thưởng Thức!</h3>
+      <p>Đơn hàng được đóng gói cẩn thận và giao đến bạn trong 3–5 ngày làm việc.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ĐẶT HÀNG THEO YÊU CẦU ══ -->
+<div id="dat-hang" class="order-section">
+  <h2>Muốn thiết kế riêng? 🎨</h2>
+  <p>Chúng mình rất thích nhận đơn đặt riêng! Hãy cho biết ý tưởng của bạn — màu sắc, nhân vật, hay thiết kế bất kỳ.</p>
+  <div class="order-btns">
+    <button class="btn btn-primary"
+            onclick="moModal('Đơn Đặt Riêng', 'Giá thương lượng', 'custom')">✏️ Đặt Theo Yêu Cầu</button>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3fwGA6tW3ACIUbTreqRpmLA09F1WW8AecTagxAF4SM0Tcdg/viewform?usp=header" target="_blank" class="btn btn-secondary">
+      📋 Mở Google Form
+    </a>
+    <!-- ↑ Thay href bằng link Google Form thật của bạn -->
+  </div>
+</div>
+
+<!-- ══ ĐÁNH GIÁ KHÁCH HÀNG ══ -->
+<section class="testimonials">
+  <div class="section-header">
+    <div class="section-label">💬 Đánh Giá</div>
+    <h2>Khách Hàng Nói Gì</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Con thỏ tai dài ngoài đời còn dễ thương hơn ảnh! Mềm mịn và chắc chắn lắm. Mình đã đặt thêm một con nữa để tặng bạn."</div>
+      <div class="testi-author">— Linh N., Hà Nội</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Mình nhờ làm móc khoá màu riêng và kết quả quá hoàn hảo. Phản hồi nhanh và đóng gói đẹp lắm!"</div>
+      <div class="testi-author">— Minh T., TP. Hồ Chí Minh</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Mua bó hoa khô để bàn làm việc — đã 3 tháng rồi vẫn đẹp như mới. Rất đáng để thử!"</div>
+      <div class="testi-author">— Hana P., Đà Nẵng</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CHÂN TRANG ══ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo"><span>🧸</span> Lung ta lung tung</div>
+      <p>Handmade với tình yêu từ Hà Nội. Mỗi sản phẩm đều mang theo một câu chuyện.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Cửa Hàng</h4>
+      <ul>
+        <li><a href="#thu-bong">Thú Bông</a></li>
+        <li><a href="#thu-cong">Đồ Thủ Công</a></li>
+        <li><a href="#dat-hang">Đặt Hàng Riêng</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Thông Tin</h4>
+      <ul>
+        <li><a href="#huong-dan">Cách Đặt Hàng</a></li>
+        <li><a href="#">Chính Sách Giao Hàng</a></li>
+        <li><a href="#">Chính Sách Đổi Trả</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Liên Hệ</h4>
+      <ul>
+        <li><a href="mailto:hello@cozypaws.vn">hello@cozypaws.vn</a></li>
+        <li><a href="#">Zalo: 09xx xxx xxx</a></li>
+        <li><a href="#">Trang Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Lung ta lung tung. Làm ra với 💕 tại Hà Nội.</div>
+</footer>
+
+<!-- ══ MODAL ĐẶT HÀNG ══ -->
+<div class="modal-overlay" id="modalOverlay" onclick="dongModalNen(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="dongModal()">✕</button>
+    <h3 id="modalTieuDe">Đặt Hàng</h3>
+    <p class="modal-sub" id="modalMoTa">Điền thông tin bên dưới, chúng mình sẽ xác nhận sớm nhất có thể.</p>
+
+    <!--
+      HƯỚNG DẪN KẾT NỐI GOOGLE FORM:
+      1. Tạo Google Form với các trường: Sản phẩm, Họ tên, Số điện thoại, Địa chỉ, Số lượng, Ghi chú, Email
+      2. Vào menu ⋮ → Lấy link điền sẵn → Điền thử → Sao chép URL
+      3. Lấy form ID và các entry.XXXXXXXXX từ URL đó
+      4. Thay thế GOOGLE_FORM_ID và các ENTRY_ID bên dưới
+    -->
+    <form id="donHang" onsubmit="guiDonHang(event)">
+      <div class="form-group">
+        <label>Sản phẩm *</label>
+        <input type="text" id="truongSanPham"
+               name="entry.1482119416"
+               class="field-readonly" readonly/>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Họ và tên *</label>
+          <input type="text" id="truongHoTen"
+                 name="entry.1854781838"
+                 placeholder="Nguyễn Văn A" required/>
+        </div>
+        <div class="form-group">
+          <label>Số điện thoại / Zalo *</label>
+          <input type="tel" id="truongSDT"
+                 name="entry.970618431"
+                 placeholder="09xx xxx xxx" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Địa chỉ giao hàng *</label>
+        <input type="text" id="truongDiaChi"
+               name="entry.195132839"
+               placeholder="Số nhà, Phường/Xã, Quận/Huyện, Tỉnh/TP" required/>
+      </div>
+      <div class="form-group">
+        <label>Số lượng</label>
+        <select id="truongSoLuong" name="entry.466367913">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5+</option>
+        </select>
+      </div>
+      <div class="form-group" id="nhomGhiChu" style="display:none;">
+        <label>Yêu cầu / Ghi chú</label>
+        <textarea id="truongGhiChu"
+                  name="entry.452073048"
+                  placeholder="Màu sắc, kích cỡ, cá nhân hoá…"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Email (tuỳ chọn — để nhận xác nhận đơn hàng)</label>
+        <input type="email" id="truongEmail"
+               name="entry.635134611"
+               placeholder="ban@example.com"/>
+      </div>
+      <button type="submit" class="form-submit" id="nutGui">🛍️ Gửi Đơn Hàng</button>
+      <p class="form-note">Chúng mình sẽ xác nhận qua điện thoại / Zalo trong vòng 24 giờ.</p>
+    </form>
+  </div>
+</div>
+
+<!-- ══ THÔNG BÁO TOAST ══ -->
+<div class="toast" id="toast">✅ Đặt hàng thành công! Chúng mình sẽ liên hệ sớm nhé 💕</div>
+
+<!-- ══ JAVASCRIPT ══ -->
+<script>
+  // ── Thay YOUR_FORM_ID bằng ID thật từ URL Google Form của bạn ──
+  const GOOGLE_FORM_ACTION =
+    "https://docs.google.com/forms/d/e/1FAIpQLSc3fwGA6tW3ACIUbTreqRpmLA09F1WW8AecTagxAF4SM0Tcdg/formResponse";
+
+  // ── Mở modal đặt hàng ──
+  function moModal(sanPham, gia, loai) {
+    document.getElementById('truongSanPham').value = sanPham + ' — ' + gia;
+    document.getElementById('modalTieuDe').textContent = 'Đặt hàng: ' + sanPham;
+    const hienGhiChu = loai === 'thu-cong' || loai === 'custom';
+    document.getElementById('nhomGhiChu').style.display = hienGhiChu ? 'block' : 'none';
+    document.getElementById('modalMoTa').textContent =
+      loai === 'custom'
+        ? 'Hãy mô tả ý tưởng của bạn, chúng mình sẽ báo giá sớm nhất!'
+        : 'Điền thông tin bên dưới, chúng mình sẽ xác nhận sớm nhất có thể.';
+    document.getElementById('modalOverlay').classList.add('open');
+  }
+
+  // ── Đóng modal ──
+  function dongModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.getElementById('donHang').reset();
+    const btn = document.getElementById('nutGui');
+    btn.disabled = false;
+    btn.textContent = '🛍️ Gửi Đơn Hàng';
+  }
+
+  function dongModalNen(e) {
+    if (e.target === document.getElementById('modalOverlay')) dongModal();
+  }
+
+  // ── Gửi đơn qua hidden iframe (tránh CORS redirect của Google Forms) ──
+  function guiDonHang(e) {
+    e.preventDefault();
+    const btn = document.getElementById('nutGui');
+    btn.disabled = true;
+    btn.textContent = 'Đang gửi…';
+
+    const duLieu = {
+      'entry.1482119416': document.getElementById('truongSanPham').value,
+      'entry.1854781838':    document.getElementById('truongHoTen').value,
+      'entry.970618431':   document.getElementById('truongSDT').value,
+      'entry.195132839': document.getElementById('truongDiaChi').value,
+      'entry.466367913':     document.getElementById('truongSoLuong').value,
+      'entry.452073048':    document.getElementById('truongGhiChu').value,
+      'entry.635134611':   document.getElementById('truongEmail').value,
+    };
+
+    let iframe = document.getElementById('hiddenFrame');
+    if (!iframe) {
+      iframe = document.createElement('iframe');
+      iframe.id = 'hiddenFrame';
+      iframe.name = 'hiddenFrame';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+    }
+
+    const tmpForm = document.createElement('form');
+    tmpForm.method = 'POST';
+    tmpForm.action = GOOGLE_FORM_ACTION;
+    tmpForm.target = 'hiddenFrame';
+
+    for (const [key, val] of Object.entries(duLieu)) {
+      const inp = document.createElement('input');
+      inp.type = 'hidden'; inp.name = key; inp.value = val;
+      tmpForm.appendChild(inp);
+    }
+    document.body.appendChild(tmpForm);
+    tmpForm.submit();
+    document.body.removeChild(tmpForm);
+
+    setTimeout(() => {
+      dongModal();
+      hienToast('✅ Đặt hàng thành công! Chúng mình sẽ liên hệ sớm nhé 💕');
+    }, 600);
+  }
+
+  // ── Hiển thị toast thông báo ──
+  function hienToast(noidung) {
+    const t = document.getElementById('toast');
+    t.textContent = noidung;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 4000);
+  }
+</script>
+</body>
+</html>
