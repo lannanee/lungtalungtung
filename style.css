@@ -1314,3 +1314,585 @@ img.plushie-img {
   color: rgba(240, 230, 218, 0.35);
   letter-spacing: 0.1em;
 }
+
+/* =============================================
+   lung ta lung lung — MoMo Checkout Modal
+   THÊM VÀO CUỐI FILE style.css
+   ============================================= */
+
+/* ---------- BODY LOCK KHI MỞ MODAL ---------- */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* ---------- OVERLAY NỀN MỜ ---------- */
+.momo-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  background: rgba(10, 8, 20, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.momo-overlay.open {
+  display: flex;
+}
+
+/* ---------- MODAL CARD ---------- */
+.momo-modal {
+  background: #1e1b2e;
+  border: 1px solid rgba(217, 184, 168, 0.28);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(217, 184, 168, 0.06);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(217, 184, 168, 0.25) transparent;
+}
+
+.momo-modal::-webkit-scrollbar { width: 3px; }
+.momo-modal::-webkit-scrollbar-thumb { background: rgba(217, 184, 168, 0.25); border-radius: 2px; }
+
+/* ---------- NÚT ĐÓNG ---------- */
+.momo-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(217, 184, 168, 0.08);
+  border: 1px solid rgba(217, 184, 168, 0.2);
+  color: rgba(217, 184, 168, 0.7);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.momo-close:hover {
+  background: rgba(217, 184, 168, 0.18);
+  color: #F6EDE3;
+}
+
+/* ---------- THANH BƯỚC ---------- */
+.momo-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 1.4rem 2rem 0.4rem;
+}
+
+.momo-step-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.msd-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.msd-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.momo-step-dot.active .msd-num {
+  background: linear-gradient(135deg, #D9B8A8, #c4987f);
+  color: #2D3142;
+}
+.momo-step-dot.active .msd-label { color: #D9B8A8; }
+
+.momo-step-dot.done .msd-num {
+  background: rgba(217, 184, 168, 0.2);
+  color: #D9B8A8;
+}
+.momo-step-dot.done .msd-label { color: rgba(217, 184, 168, 0.5); }
+
+.momo-step-dot.inactive .msd-num {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(217, 184, 168, 0.25);
+}
+.momo-step-dot.inactive .msd-label { color: rgba(217, 184, 168, 0.25); }
+
+.momo-step-line {
+  width: 36px;
+  height: 1px;
+  background: rgba(217, 184, 168, 0.15);
+  margin: 0 6px;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+/* ---------- HEADER BÉ GẤU ---------- */
+.momo-head {
+  padding: 0.8rem 1.5rem 0;
+}
+
+.momo-plushie-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(217, 184, 168, 0.06);
+  border: 1px solid rgba(217, 184, 168, 0.15);
+  border-radius: 16px;
+  padding: 0.75rem 1rem;
+}
+
+.momo-plushie-icon { font-size: 1.8rem; }
+
+.momo-plushie-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #F6EDE3;
+}
+
+.momo-plushie-sub {
+  font-size: 0.72rem;
+  color: #D9B8A8;
+  margin-top: 2px;
+}
+
+/* ---------- BODY / PANES ---------- */
+.momo-body {
+  padding: 1rem 1.5rem 0.5rem;
+}
+
+.momo-pane { display: none; }
+.momo-pane.active { display: block; }
+
+/* ---------- TIÊU ĐỀ PHẦN ---------- */
+.momo-section-title {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(217, 184, 168, 0.55);
+  margin-bottom: 0.7rem;
+}
+
+/* ---------- CHỌN GÓI ---------- */
+.momo-pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.momo-pkg {
+  background: rgba(217, 184, 168, 0.05);
+  border: 1px solid rgba(217, 184, 168, 0.18);
+  border-radius: 12px;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.momo-pkg:hover {
+  background: rgba(217, 184, 168, 0.1);
+  border-color: rgba(217, 184, 168, 0.4);
+}
+
+.momo-pkg.selected {
+  background: rgba(217, 184, 168, 0.13);
+  border-color: #D9B8A8;
+  box-shadow: 0 0 14px rgba(217, 184, 168, 0.18);
+}
+
+.pkg-n {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #F6EDE3;
+}
+
+.pkg-p {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #D9B8A8;
+}
+
+.pkg-hint {
+  font-size: 0.62rem;
+  color: rgba(240, 230, 218, 0.38);
+  line-height: 1.3;
+}
+
+/* ---------- FORM FIELDS ---------- */
+.momo-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.momo-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.momo-field label {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #D9B8A8;
+}
+
+.momo-field input,
+.momo-field select,
+.momo-field textarea {
+  background: rgba(20, 18, 38, 0.7);
+  border: 1px solid rgba(217, 184, 168, 0.2);
+  color: #F6EDE3;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  resize: none;
+}
+
+.momo-field input::placeholder,
+.momo-field textarea::placeholder {
+  color: rgba(240, 230, 218, 0.28);
+  font-style: italic;
+}
+
+.momo-field select option { background: #1a1d2e; }
+
+.momo-field input:focus,
+.momo-field select:focus,
+.momo-field textarea:focus {
+  border-color: rgba(217, 184, 168, 0.5);
+  box-shadow: 0 0 0 3px rgba(217, 184, 168, 0.08);
+}
+
+/* ---------- TÓM TẮT ĐƠN HÀNG ---------- */
+.momo-summary-box {
+  background: rgba(217, 184, 168, 0.05);
+  border: 1px solid rgba(217, 184, 168, 0.14);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sum-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.84rem;
+  color: rgba(240, 230, 218, 0.65);
+  padding: 0.25rem 0;
+}
+
+.sum-row .sum-val { color: #D9B8A8; }
+
+.sum-row.total {
+  color: #F6EDE3;
+  font-weight: 700;
+  font-size: 0.98rem;
+  border-top: 1px solid rgba(217, 184, 168, 0.15);
+  margin-top: 0.4rem;
+  padding-top: 0.6rem;
+}
+
+.sum-row.total .sum-val { color: #D9B8A8; }
+
+/* ---------- THANH TOÁN MOMO ---------- */
+.momo-pay-center {
+  text-align: center;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.momo-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #ae2070;
+  border-radius: 20px;
+  padding: 5px 16px;
+  margin-bottom: 1.2rem;
+}
+
+.momo-m {
+  font-weight: 900;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1;
+}
+
+.momo-badge-pill span:last-child {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.momo-qr-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 16px;
+  padding: 10px;
+  margin: 0 auto 1rem auto;
+  width: 260px;
+  height: 260px;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.4);
+}
+
+.momo-qr-wrap img {
+  display: block;
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+}
+
+.momo-qr-wrap svg {
+  display: block;
+  width: 240px;
+  height: 240px;
+}
+
+.momo-amount-display {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #D9B8A8;
+  margin-bottom: 0.2rem;
+}
+
+.momo-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.momo-info-label {
+  font-size: 0.72rem;
+  color: rgba(240, 230, 218, 0.45);
+  white-space: nowrap;
+}
+
+.momo-info-val {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #F6EDE3;
+  font-family: monospace;
+  letter-spacing: 0.05em;
+}
+
+.momo-copy-btn {
+  background: rgba(217, 184, 168, 0.1);
+  border: 1px solid rgba(217, 184, 168, 0.25);
+  color: #D9B8A8;
+  font-size: 0.68rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.momo-copy-btn:hover {
+  background: rgba(217, 184, 168, 0.2);
+  border-color: rgba(217, 184, 168, 0.45);
+}
+
+.momo-note-text {
+  font-size: 0.75rem;
+  color: rgba(240, 230, 218, 0.4);
+  line-height: 1.7;
+  margin-top: 1.2rem;
+  font-style: italic;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- MÀN THÀNH CÔNG ---------- */
+.momo-success {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.momo-success-emoji {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.momo-success-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: #F6EDE3;
+  margin-bottom: 0.7rem;
+}
+
+.momo-success-sub {
+  font-size: 0.88rem;
+  color: rgba(240, 230, 218, 0.55);
+  line-height: 1.8;
+  margin-bottom: 1.8rem;
+}
+
+.momo-done-btn {
+  padding: 0.8rem 2.2rem;
+  background: linear-gradient(135deg, #D9B8A8, #c4987f);
+  color: #2D3142;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 4px 20px rgba(217, 184, 168, 0.3);
+}
+
+.momo-done-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(217, 184, 168, 0.45);
+}
+
+/* ---------- FOOTER ĐIỀU HƯỚNG ---------- */
+.momo-footer {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem 1.5rem;
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(to top, #1e1b2e 80%, transparent);
+  margin-top: 0.5rem;
+}
+
+.momo-btn-back {
+  flex: 1;
+  padding: 0.8rem;
+  background: transparent;
+  border: 1px solid rgba(217, 184, 168, 0.22);
+  color: rgba(240, 230, 218, 0.65);
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.momo-btn-back:hover {
+  background: rgba(217, 184, 168, 0.07);
+  color: #F6EDE3;
+}
+
+.momo-btn-next {
+  flex: 2.5;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, #D9B8A8, #c4987f);
+  color: #2D3142;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: all 0.22s;
+  box-shadow: 0 4px 18px rgba(217, 184, 168, 0.25);
+}
+
+.momo-btn-next:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(217, 184, 168, 0.4);
+}
+
+/* ---------- TOAST THÔNG BÁO ---------- */
+.checkout-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: rgba(217, 184, 168, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(217, 184, 168, 0.28);
+  color: #F6EDE3;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  padding: 0.75rem 1.8rem;
+  border-radius: 50px;
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.35s ease;
+  font-size: 0.88rem;
+  pointer-events: none;
+  white-space: nowrap;
+  max-width: 90vw;
+  text-align: center;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 540px) {
+  .momo-modal {
+    border-radius: 20px 20px 0 0;
+    max-height: 92vh;
+  }
+
+  .momo-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .momo-field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .momo-pkg-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+
+  .pkg-hint { display: none; }
+
+  .momo-steps { padding: 1.2rem 1rem 0.4rem; }
+  .momo-step-line { width: 22px; }
+  .momo-body { padding: 1rem 1.2rem 0.5rem; }
+  .momo-footer { padding: 0.75rem 1.2rem 1.2rem; }
+}
