@@ -232,3 +232,90 @@ const sectionObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 sections.forEach(s => sectionObserver.observe(s));
+
+/* =============================================
+   THÊM VÀO CUỐI script.js (hoặc trước </body>)
+   
+   Thay APPS_SCRIPT_URL bằng URL bạn deploy từ
+   Google Apps Script (xem hướng dẫn bên dưới)
+   ============================================= */
+
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyem0lgGADjP4pKfzhUdmm1y_jIydiQLpaRTo4MmWGSPZuxuHyssSFQheSn0R-FCpEmPw/exec";
+
+/* Ghi đơn hàng vào Google Sheets */
+async function submitOrderToSheet() {
+  const name     = document.getElementById('cf-name').value.trim();
+  const phone    = document.getElementById('cf-phone').value.trim();
+  const email    = document.getElementById('cf-email').value.trim();
+  const addr     = document.getElementById('cf-addr').value.trim();
+  const district = document.getElementById('cf-district').value.trim();
+  const city     = document.getElementById('cf-city').value;
+  const note     = document.getElementById('cf-note').value.trim();
+
+  const orderData = {
+    name,
+    phone,
+    email,
+    address:      addr,
+    district,
+    city,
+    note,
+    plushie:      _plushie.name,
+    emotion:      _plushie.emotion,
+    package:      _pkg.name,
+    packagePrice: _pkg.price,
+    shipping:     SHIPPING,
+    total:        _pkg.price + SHIPPING
+  };
+
+  try {
+    await fetch(APPS_SCRIPT_URL, {
+      method: "POST",
+      // Apps Script doPost nhận text, không cần Content-Type JSON header
+      // vì CORS sẽ chặn preflight — dùng text/plain là an toàn nhất
+      headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify(orderData)
+    });
+  } catch (err) {
+    // Không block người dùng nếu lỗi mạng — đơn vẫn hiển thị thành công
+    console.warn("Không thể ghi sheet:", err);
+  }
+}
+
+/* ── OVERRIDE checkoutNext để gọi submitOrderToSheet ở bước 3 ──
+   Copy đoạn này vào, nó sẽ override hàm checkoutNext() cũ       */
+function checkoutNext() {
+  if (_step === 1) {
+    const name = document.getElementById('cf-name').value.trim();
+    const phone = document.getElementById('cf-phone').value.trim();
+    const addr = document.getElementById('cf-addr').value.trim();
+    const city = document.getElementById('cf-city').value;
+    if (!name || !phone || !addr || !city) {
+      showCheckoutToast('Vui lòng điền đầy đủ: Họ tên, SĐT, Địa chỉ và Thành phố nhé 🧸');
+      return;
+    }
+    buildOrderSummary(name, phone, addr);
+    _step = 2;
+
+  } else if (_step === 2) {
+    const total = _pkg.price + SHIPPING;
+    document.getElementById('momoFinalAmount').textContent = fmtVND(total);
+    document.getElementById('momoContent').textContent = 'LTLL-' + _plushie.name.toUpperCase();
+    _step = 3;
+
+  } else if (_step === 3) {
+    // ── Người dùng bấm "Đã chuyển khoản ✓" ──
+    const btn = document.getElementById('mmBtnNext');
+    btn.textContent = 'Đang ghi đơn hàng...';
+    btn.disabled = true;
+
+    submitOrderToSheet().finally(() => {
+      btn.disabled = false;
+      _step = 4;
+      renderCheckoutStep();
+    });
+    return; // renderCheckoutStep sẽ được gọi trong finally
+  }
+
+  renderCheckoutStep();
+}
