@@ -2,501 +2,539 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lung ta lung tung 🧸 — Thú Bông & Đồ Thủ Công</title>
-  <meta name="description" content="Shop thú bông và đồ thủ công handmade từ Hà Nội — móc khoá len, hoa len, và nhiều hơn nữa. Đặt hàng dễ dàng qua form online."/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <!-- ── Liên kết file CSS riêng ── -->
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lung ta lung lung — Memory Plushies</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Ảnh thú bông từ thư mục images/ */
+    img.plushie-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      display: block;
+    }
+
+    /* Google Form link card */
+    .form-link-wrap {
+      width: 100%;
+      max-width: 560px;
+      margin: 2.5rem auto 0;
+    }
+
+    .form-link-card {
+      background: rgba(246, 237, 227, 0.05);
+      border: 1px solid rgba(217, 184, 168, 0.3);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .form-link-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(217,184,168,0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .form-link-card:hover {
+      border-color: rgba(217, 184, 168, 0.55);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 40px rgba(217,184,168,0.1);
+      transform: translateY(-4px);
+    }
+
+    .form-link-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1.2rem;
+      animation: floatLoader 3s ease-in-out infinite;
+    }
+
+    .form-link-title {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.45rem;
+      color: #F6EDE3;
+      margin-bottom: 1rem;
+    }
+
+    .form-link-desc {
+      font-size: 0.9rem;
+      color: rgba(240,230,218,0.65);
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    .form-link-desc em {
+      color: rgba(217,184,168,0.8);
+    }
+
+    .btn-form-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 2.6rem;
+      background: linear-gradient(135deg, #D9B8A8, #c4987f, #a87560);
+      color: #2D3142;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 30px rgba(217,184,168,0.35);
+      text-decoration: none;
+    }
+
+    .btn-form-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 44px rgba(217,184,168,0.5);
+    }
+
+    .btn-arrow {
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-form-link:hover .btn-arrow {
+      transform: translateX(5px);
+    }
+
+    .form-link-note {
+      margin-top: 1.4rem;
+      font-size: 0.72rem;
+      color: rgba(240,230,218,0.35);
+      letter-spacing: 0.1em;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-<!-- ══ THANH ĐIỀU HƯỚNG ══ -->
-<nav>
-  <div class="nav-logo"><span>🧸</span> Lung ta lung tung</div>
-  <ul class="nav-links">
-    <li><a href="#thu-bong">Thú Bông</a></li>
-    <li><a href="#thu-cong">Đồ Thủ Công</a></li>
-    <li><a href="#huong-dan">Cách Đặt Hàng</a></li>
-    <li><a href="#dat-hang" class="btn nav-cta">Đặt Hàng Ngay</a></li>
-  </ul>
-</nav>
-
-<!-- ══ HERO ══ -->
-<section class="hero">
-  <div class="hero-badge">✨ Handmade with Love</div>
-  <h1>Thú Bông <em>Dễ Thương</em> &amp; Đồ Thủ Công Handmade</h1>
-  <p>Mỗi sản phẩm đều được làm thủ công tỉ mỉ — từ thú bông mềm mại đến móc khoá len và hoa len xinh xắn.</p>
-  <div class="hero-btns">
-    <a href="#thu-bong" class="btn btn-primary">🐻 Xem Thú Bông</a>
-    <a href="#thu-cong" class="btn btn-secondary">🌸 Xem Đồ Thủ Công</a>
-  </div>
-  <div class="hero-floats">
-    <div class="float-chip">🚚 Miễn phí ship từ 500k</div>
-    <div class="float-chip">🎁 Gói quà theo yêu cầu</div>
-    <div class="float-chip">🎨 Nhận đơn đặt riêng</div>
-  </div>
-</section>
-
-<!-- ══ TÍNH NĂNG NỔI BẬT ══ -->
-<div class="features-strip">
-  <div class="feature-item">
-    <div class="feature-icon">🧶</div>
-    <div class="feature-text">
-      <strong>100% Thủ Công</strong>
-      <span>Mỗi sản phẩm đều tự tay làm</span>
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-plushie">🧸</div>
+      <p class="loader-text">đang thu thập ký ức của bạn<span class="dots">...</span></p>
     </div>
   </div>
-  <div class="feature-item">
-    <div class="feature-icon">🎨</div>
-    <div class="feature-text">
-      <strong>Thiết Kế Riêng</strong>
-      <span>Đặt hàng theo ý thích của bạn</span>
-    </div>
-  </div>
-  <div class="feature-item">
-    <div class="feature-icon">📦</div>
-    <div class="feature-text">
-      <strong>Đóng Gói Cẩn Thận</strong>
-      <span>Hàng được bọc kỹ lưỡng, an toàn</span>
-    </div>
-  </div>
-  <div class="feature-item">
-    <div class="feature-icon">💌</div>
-    <div class="feature-text">
-      <strong>Đặt Hàng Qua Form</strong>
-      <span>Nhanh chóng, tiện lợi</span>
-    </div>
-  </div>
-</div>
 
-<!-- ══ THÚ BÔNG ══ -->
-<section id="thu-bong">
-  <div class="section-header">
-    <div class="section-label">🐻 Danh Mục</div>
-    <h2>Thú Bông</h2>
-    <p>Mềm mại, đáng yêu và đầy cá tính — tìm người bạn mới của bạn ngay tại đây.</p>
-  </div>
-  <div class="product-grid">
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-    <!-- ── Sản phẩm 1: Gấu Bông Cổ Điển ── -->
-    <div class="product-card">
-      <div class="product-img">
-        <!--
-          ĐẶT ẢNH: Lưu file ảnh vào thư mục  images/
-          Ví dụ: images/gau-bong.jpg
-          Đổi src thành:  src="images/gau-bong.jpg"
-        -->
-        <img src="images/gau-bong.jpg"
-             alt="Classic Teddy Bear"
-             onerror="this.style.display='none'"/>
-        <div class="tag moi">Mới</div>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">lung ta lung lung</div>
+    <ul class="nav-links">
+      <li><a href="#emotions">Cảm xúc</a></li>
+      <li><a href="#plushies">Thú bông</a></li>
+      <li><a href="#pricing">Bảng giá</a></li>
+      <li><a href="#order">Đặt hàng</a></li>
+    </ul>
+    <div class="nav-music">
+      <button id="musicToggle" title="Toggle music">♪</button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="rain-container" id="rain"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-glow-orb orb1"></div>
+      <div class="hero-glow-orb orb2"></div>
+    </div>
+    <div class="particles" id="particles"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow fade-in">✦ thủ công với ai & tình yêu</p>
+      <h1 class="hero-title fade-in delay-1">
+        Mỗi chú thú bông mang theo<br />
+        <em>một ký ức được tạo riêng cho ai đó.</em>
+      </h1>
+      <p class="hero-subtitle fade-in delay-2">
+        Những người bạn đồng hành cảm xúc được làm thủ công với câu chuyện AI, giọng nói và tình yêu.
+      </p>
+      <div class="hero-buttons fade-in delay-3">
+        <a href="#order" class="btn-primary">Tạo Thú Bông Của Bạn</a>
+        <a href="#plushies" class="btn-ghost">Khám Phá Ký Ức</a>
       </div>
-      <div class="product-body">
-        <div class="product-name">Classic Teddy Bear</div>
-        <div class="product-desc">Bông cotton cao cấp, mắt cúc xinh, có 3 kích cỡ. Quà tặng hoàn hảo cho mọi dịp.</div>
-        <div class="product-footer">
-          <div class="product-price">180.000 đ</div>
-          <button class="product-btn"
-                  onclick="moModal('Classic Teddy Bear', '180.000 đ', 'thu-bong')">Đặt Hàng</button>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>cuộn xuống</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- EMOTION SECTION -->
+  <section class="emotions" id="emotions">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ bạn đang cảm thấy gì?</p>
+      <h2>Chọn Một Cảm Xúc</h2>
+      <p class="section-sub">Mỗi chú thú bông bắt đầu từ một cảm xúc.</p>
+    </div>
+    <div class="emotion-grid">
+      <div class="emotion-card" style="--glow: #D9B8A8">
+        <div class="emotion-icon">🕯️</div>
+        <h3>An Ủi</h3>
+        <p>"Cho những đêm cảm thấy quá yên tĩnh."</p>
+      </div>
+      <div class="emotion-card" style="--glow: #b8d4c8">
+        <div class="emotion-icon">🌿</div>
+        <h3>Chữa Lành</h3>
+        <p>"Cho những phần của bạn đang học cách lành lại."</p>
+      </div>
+      <div class="emotion-card" style="--glow: #c4b5d9">
+        <div class="emotion-icon">🌙</div>
+        <h3>Nhớ Ai Đó</h3>
+        <p>"Khi khoảng cách nặng hơn những lời nói."</p>
+      </div>
+      <div class="emotion-card" style="--glow: #f0cfa0">
+        <div class="emotion-icon">🎂</div>
+        <h3>Sinh Nhật</h3>
+        <p>"Một món quà dịu dàng mà họ sẽ không bao giờ quên."</p>
+      </div>
+      <div class="emotion-card" style="--glow: #f4a7b9">
+        <div class="emotion-icon">🌸</div>
+        <h3>Tình Yêu</h3>
+        <p>"Một vòng ôm ở lại dù khi bạn đã rời đi."</p>
+      </div>
+      <div class="emotion-card" style="--glow: #ffd580">
+        <div class="emotion-icon">✨</div>
+        <h3>Động Lực</h3>
+        <p>"Một cái thúc nhẹ nhàng vào những ngày khó khăn."</p>
+      </div>
+      <div class="emotion-card" style="--glow: #a8c4d9">
+        <div class="emotion-icon">🏡</div>
+        <h3>Chỗ Trú Ẩn</h3>
+        <p>"Thứ gì đó mềm mại để ôm khi thế giới quá ồn ào."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PLUSHIES -->
+  <section class="plushies" id="plushies">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ người bạn đồng hành mềm mại</p>
+      <h2>Thú Bông Nổi Bật</h2>
+    </div>
+    <div class="plushie-grid">
+
+      <div class="plushie-card">
+        <div class="plushie-img-wrap">
+          <img class="plushie-img" src="images/misu.svg" alt="Misu - Thú bông Chữa Lành" />
+          <span class="plushie-emotion-tag">Chữa Lành</span>
+        </div>
+        <div class="plushie-info">
+          <h3>Misu</h3>
+          <p class="plushie-desc">"Misu yêu những buổi chiều mưa và những bản nhạc piano yên tĩnh. Cô ấy sẽ ở bên bạn cho đến khi bầu trời trở nên dịu dàng hơn."</p>
+          <ul class="plushie-includes">
+            <li>🧸 Thú bông thủ công</li>
+            <li>🎙️ Tin nhắn giọng nói AI</li>
+            <li>🎬 Video ký ức AI</li>
+            <li>💌 Thư viết tay</li>
+            <li>🎁 Hộp quà cao cấp</li>
+          </ul>
+          <div class="plushie-footer">
+            <span class="plushie-price">399.000đ</span>
+            <a href="#order" class="btn-small">Đón Misu Về Nhà</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="plushie-card featured">
+        <div class="plushie-badge">Được Yêu Nhất</div>
+        <div class="plushie-img-wrap">
+          <img class="plushie-img" src="images/lumi.svg" alt="Lumi - Thú bông An Ủi" />
+          <span class="plushie-emotion-tag">An Ủi</span>
+        </div>
+        <div class="plushie-info">
+          <h3>Lumi</h3>
+          <p class="plushie-desc">"Lumi nhắc bạn uống nước và ngủ sớm. Cô ấy mang một ánh sáng ấm áp cho những buổi tối tối tăm nhất."</p>
+          <ul class="plushie-includes">
+            <li>🧸 Thú bông thủ công</li>
+            <li>🎙️ Tin nhắn giọng nói AI</li>
+            <li>🎬 Video ký ức AI</li>
+            <li>💌 Thư viết tay</li>
+            <li>🎁 Hộp quà cao cấp</li>
+          </ul>
+          <div class="plushie-footer">
+            <span class="plushie-price">499.000đ</span>
+            <a href="#order" class="btn-small">Đón Lumi Về Nhà</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="plushie-card">
+        <div class="plushie-img-wrap">
+          <img class="plushie-img" src="images/noel.svg" alt="Noel - Thú bông Nhớ Ai Đó" />
+          <span class="plushie-emotion-tag">Nhớ Ai Đó</span>
+        </div>
+        <div class="plushie-info">
+          <h3>Noel</h3>
+          <p class="plushie-desc">"Noel được tạo ra cho khoảng không gian giữa những lá thư. Hãy ôm cô ấy thật chặt và cô ấy sẽ chuyển lời nhắn của bạn qua khoảng cách."</p>
+          <ul class="plushie-includes">
+            <li>🧸 Thú bông thủ công</li>
+            <li>🎙️ Tin nhắn giọng nói AI</li>
+            <li>🎬 Video ký ức AI</li>
+            <li>💌 Thư viết tay</li>
+            <li>🎁 Hộp quà cao cấp</li>
+          </ul>
+          <div class="plushie-footer">
+            <span class="plushie-price">449.000đ</span>
+            <a href="#order" class="btn-small">Đón Noel Về Nhà</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section class="pricing" id="pricing">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ chọn ký ức của bạn</p>
+      <h2>Gói Ký Ức</h2>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <div class="pricing-top">
+          <p class="pricing-tier">Cơ Bản</p>
+          <h3>Thú Bông Ký Ức</h3>
+          <p class="pricing-price">299.000đ</p>
+        </div>
+        <ul class="pricing-list">
+          <li>🧸 Thú bông thủ công</li>
+          <li>💌 Thẻ ký ức</li>
+          <li>🎁 Hộp quà thẩm mỹ</li>
+        </ul>
+        <a href="#order" class="btn-pricing">Bắt Đầu Tại Đây</a>
+      </div>
+
+      <div class="pricing-card popular">
+        <div class="pricing-badge">✨ Phổ Biến Nhất</div>
+        <div class="pricing-top">
+          <p class="pricing-tier">Cao Cấp</p>
+          <h3>Thú Bông Cảm Xúc</h3>
+          <p class="pricing-price">499.000đ</p>
+        </div>
+        <ul class="pricing-list">
+          <li>🧸 Thú bông thủ công</li>
+          <li>🎙️ Tin nhắn giọng nói AI</li>
+          <li>💌 Thư cảm xúc</li>
+          <li>🧠 Hồ sơ ký ức tùy chỉnh</li>
+          <li>📱 Link video QR</li>
+        </ul>
+        <a href="#order" class="btn-pricing-glow">Chọn Gói Này</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-top">
+          <p class="pricing-tier">Trọn Vẹn</p>
+          <h3>Hộp Ký Ức</h3>
+          <p class="pricing-price">799.000đ</p>
+        </div>
+        <ul class="pricing-list">
+          <li>🧸 Thú bông thủ công</li>
+          <li>🎬 Video AI hát/kể chuyện</li>
+          <li>📓 Nhật ký viết tay</li>
+          <li>🎨 Bộ sticker</li>
+          <li>🎵 Playlist tùy chỉnh</li>
+          <li>🎁 Hộp quà cao cấp</li>
+        </ul>
+        <a href="#order" class="btn-pricing">Trọn Vẹn Giấc Mơ</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIDEO / VOICES SECTION -->
+  <section class="voices" id="voices">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ lắng nghe thật kỹ</p>
+      <h2>Giọng Nói Từ Thú Bông</h2>
+      <p class="section-sub">Mỗi chú thú bông mang một giọng nói dịu dàng, chỉ dành riêng cho bạn.</p>
+    </div>
+    <div class="video-carousel">
+      <div class="video-card">
+        <div class="video-thumb video-thumb-1">
+          <div class="video-play-btn">▶</div>
+        </div>
+        <div class="video-caption">
+          <span class="video-tag">An Ủi</span>
+          <p>"Giọng nói cho lúc 3 giờ sáng."</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb video-thumb-2">
+          <div class="video-play-btn">▶</div>
+        </div>
+        <div class="video-caption">
+          <span class="video-tag">Chữa Lành</span>
+          <p>"Bạn không cần phải ổn ngay lúc này."</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb video-thumb-3">
+          <div class="video-play-btn">▶</div>
+        </div>
+        <div class="video-caption">
+          <span class="video-tag">Sinh Nhật</span>
+          <p>"Một bài hát nhẹ nhàng chỉ dành cho bạn."</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb video-thumb-4">
+          <div class="video-play-btn">▶</div>
+        </div>
+        <div class="video-caption">
+          <span class="video-tag">Tình Yêu</span>
+          <p>"Tất cả những điều tôi không thể nói."</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- ── Sản phẩm 2: Thỏ Tai Dài ── -->
-    <div class="product-card">
-      <div class="product-img">
-        <img src="images/tho-tai-dai.jpg"
-             alt="Loppy Bunny"
-             onerror="this.style.display='none'"/>
-        <div class="tag">Phổ Biến</div>
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ quy trình</p>
+      <h2>Cách Thức Hoạt Động</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-step">
+        <div class="step-number">01</div>
+        <div class="step-glow-line"></div>
+        <div class="step-content">
+          <div class="step-icon">📖</div>
+          <h3>Kể Câu Chuyện Của Bạn</h3>
+          <p>Chia sẻ một ký ức, một cảm xúc, một người — bất cứ điều gì cần được gìn giữ nhẹ nhàng.</p>
+        </div>
       </div>
-      <div class="product-body">
-        <div class="product-name">Loppy Bunny</div>
-        <div class="product-desc">Thỏ pastel với tai dài mềm. Có sẵn màu nâu, hồng, tím lavender và xanh mint.</div>
-        <div class="product-footer">
-          <div class="product-price">220.000 đ</div>
-          <button class="product-btn"
-                  onclick="moModal('Loppy Bunny', '220.000 đ', 'thu-bong')">Đặt Hàng</button>
+      <div class="timeline-step">
+        <div class="step-number">02</div>
+        <div class="step-glow-line"></div>
+        <div class="step-content">
+          <div class="step-icon">✨</div>
+          <h3>AI Tạo Ra Cảm Xúc & Ký Ức</h3>
+          <p>AI của chúng tôi dệt câu chuyện của bạn thành giọng nói, video và tính cách riêng cho thú bông.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="step-number">03</div>
+        <div class="step-glow-line"></div>
+        <div class="step-content">
+          <div class="step-icon">🧵</div>
+          <h3>Chúng Tôi Tạo Ra Thú Bông</h3>
+          <p>Được làm thủ công với sự chăm chút, mỗi người bạn đồng hành được may với tâm huyết và tình yêu.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="step-number">04</div>
+        <div class="step-glow-line last"></div>
+        <div class="step-content">
+          <div class="step-icon">📬</div>
+          <h3>Một Ký Ức Dịu Dàng Đến Tay Bạn</h3>
+          <p>Được gói trong sự ấm áp và sẵn sàng trở thành người bạn đồng hành quý giá nhất.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- ── Sản phẩm 3: Ếch Ngủ Gật ── -->
-    <div class="product-card">
-      <div class="product-img">
-        <img src="images/ech-ngu-gat.jpg"
-             alt="Pudding Frog"
-             onerror="this.style.display='none'"/>
+  <!-- ORDER SECTION -->
+  <section class="order" id="order">
+    <div class="order-inner">
+      <div class="section-header">
+        <p class="section-eyebrow">✦ bắt đầu ký ức của bạn</p>
+        <h2>Tạo Thú Bông Của Bạn</h2>
+        <p class="order-note">
+          Cảm ơn bạn đã tin tưởng chúng mình với những ký ức của mình ♡<br />
+          Mỗi bé gấu đều được chuẩn bị bằng sự dịu dàng, ký ức và yêu thương. Hãy kể cho chúng mình nghe một chút về câu chuyện của bạn nhé.<br /><br />
+          <em>Từng chi tiết nhỏ đều sẽ trở thành một phần trong ký ức của bé gấu.</em>
+        </p>
       </div>
-      <div class="product-body">
-        <div class="product-name">Pudding Frog</div>
-        <div class="product-desc">Ếch bụ bẫm với đôi mắt tròn lonh lanh, người bạn để bàn được yêu thích nhất.</div>
-        <div class="product-footer">
-          <div class="product-price">160.000 đ</div>
-          <button class="product-btn"
-                  onclick="moModal('Pudding Frog', '160.000 đ', 'thu-bong')">Đặt Hàng</button>
+      <div class="form-link-wrap">
+        <div class="form-link-card">
+          <div class="form-link-icon">🧸</div>
+          <h3 class="form-link-title">A Little Story For Your Plushie</h3>
+          <p class="form-link-desc">
+            Nhấn vào đây để điền form đặt hàng của chúng mình nhé.<br />
+            <em>Mỗi câu chuyện của bạn đều xứng đáng được gìn giữ thật dịu dàng.</em>
+          </p>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc3fwGA6tW3ACIUbTreqRpmLA09F1WW8AecTagxAF4SM0Tcdg/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-form-link"
+          >
+            <span>Điền Form Đặt Hàng</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <p class="form-link-note">✦· Miễn phí · Chỉ mất 3 phút</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- ── Sản phẩm 4: Mèo Mini ── -->
-    <div class="product-card">
-      <div class="product-img">
-        <img src="images/meo-mini.jpg"
-             alt="Mini Kitty"
-             onerror="this.style.display='none'"/>
-        <div class="tag moi">Mới</div>
-      </div>
-      <div class="product-body">
-        <div class="product-name">Mini Kitty</div>
-        <div class="product-desc">Mèo bông nhỏ xinh với chiếc váy hồng. Đặt trang trí kệ hoặc đầu giường đều cực cute.</div>
-        <div class="product-footer">
-          <div class="product-price">145.000 đ</div>
-          <button class="product-btn"
-                  onclick="moModal('Mini Kitty', '145.000 đ', 'thu-bong')">Đặt Hàng</button>
-        </div>
-      </div>
+  <!-- MEMORY WALL -->
+  <section class="memory-wall" id="wall">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ từ gia đình nhỏ của chúng tôi</p>
+      <h2>Bức Tường Ký Ức</h2>
     </div>
-
-  </div>
-</section>
-
-<!-- ══ ĐỒ THỦ CÔNG ══ -->
-<section id="thu-cong" class="section-handmade">
-  <div class="section-header">
-    <div class="section-label" style="background: var(--sage); color: var(--sage-dark);">🌸 Thủ Công</div>
-    <h2>Đồ Thủ Công Handmade</h2>
-    <p>Móc khoá len, hoa len & nhiều hơn nữa — mỗi sản phẩm đều là duy nhất.</p>
-  </div>
-  <div class="product-grid">
-
-    <!-- ── Sản phẩm 5: Móc Khoá Gấu Len ── -->
-    <div class="product-card">
-      <div class="product-img">
-        <img src="images/moc-khoa-gau-len.jpg"
-             alt="Móc Khoá Gấu Len"
-             onerror="this.style.display='none'"/>
-        <div class="tag handmade">Thủ Công</div>
+    <div class="wall-grid">
+      <div class="wall-note note-1">
+        <p>"Gửi đi sau một lời chia tay khó khăn."</p>
+        <span>— Ẩn danh, Hà Nội</span>
       </div>
-      <div class="product-body">
-        <div class="product-name">Móc Khoá Gấu Len</div>
-        <div class="product-desc">Gấu len nhỏ xinh felting thủ công. Chọn màu tuỳ ý, có thể cá nhân hoá hoàn toàn!</div>
-        <div class="product-footer">
-          <div class="product-price">75.000 đ</div>
-          <button class="product-btn sage-btn"
-                  onclick="moModal('Móc Khoá Gấu Len', '75.000 đ', 'thu-cong')">Đặt Hàng</button>
-        </div>
+      <div class="wall-note note-2">
+        <p>"Tạo cho ai đó đang cảm thấy cô đơn. Cô ấy đã khóc khi mở hộp."</p>
+        <span>— Linh, TP.HCM</span>
+      </div>
+      <div class="wall-note note-3">
+        <p>"Quà sinh nhật cho một mối tình xa. Anh ấy nói anh ôm nó ngủ mỗi đêm."</p>
+        <span>— Trang, Đà Nẵng</span>
+      </div>
+      <div class="wall-note note-4">
+        <p>"Tôi đặt một cái sau khi mất đi ai đó. Nó giúp ích hơn tôi tưởng."</p>
+        <span>— Ẩn danh</span>
+      </div>
+      <div class="wall-note note-5">
+        <p>"Chú thú bông đầu tiên của con gái tôi giờ có giọng nói. Bé nói chuyện với nó mỗi ngày."</p>
+        <span>— Hoa, Hà Nội</span>
+      </div>
+      <div class="wall-note note-6">
+        <p>"Dành cho người bạn thân chuyển ra nước ngoài. Tin nhắn giọng nói AI khiến cả hai cùng khóc."</p>
+        <span>— Minh, Hà Nội</span>
       </div>
     </div>
+  </section>
 
-    <!-- ── Sản phẩm 6: Bó Hoa Len Mini ── -->
-    <div class="product-card">
-      <div class="product-img">
-        <img src="images/bo-hoa-kho.jpg"
-             alt="Bó Hoa Khô"
-             onerror="this.style.display='none'"/>
-        <div class="tag handmade">Thủ Công</div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">lung ta lung lung</div>
+      <p class="footer-quote">"Có những cảm xúc xứng đáng được mãi mãi nhẹ nhàng."</p>
+      <div class="footer-links">
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+        <a href="#" title="Spotify"><i class="fab fa-spotify"></i></a>
+        <a href="mailto:hello@lungtালunglung.vn" title="Email"><i class="fas fa-envelope"></i></a>
       </div>
-      <div class="product-body">
-        <div class="product-name">Bó Hoa Len Mini</div>
-        <div class="product-desc">Hoa len mini bảo quản buộc nơ lụa sang trọng. Trang trí nhà hoặc làm quà đều tuyệt vời.</div>
-        <div class="product-footer">
-          <div class="product-price">130.000 đ</div>
-          <button class="product-btn sage-btn"
-                  onclick="moModal('Bó Hoa Len Mini', '130.000 đ', 'thu-cong')">Đặt Hàng</button>
-        </div>
-      </div>
+      <p class="footer-copy">© 2025 lung ta lung lung · được tạo ra với ký ức & tình yêu</p>
     </div>
+  </footer>
 
-    <!-- ── Sản phẩm 7: Cài Áo Hoa Len ── -->
-    <div class="product-card">
-      <div class="product-img">
-        <img src="images/cai-ao-hoa-len.jpg"
-             alt="Cài Áo Hoa Len"
-             onerror="this.style.display='none'"/>
-        <div class="tag handmade">Thủ Công</div>
-      </div>
-      <div class="product-body">
-        <div class="product-name">Cài Áo Hoa Len</div>
-        <div class="product-desc">Hoa móc len thủ công làm cài áo. Quà tặng dễ thương, có đủ màu sắc theo yêu cầu.</div>
-        <div class="product-footer">
-          <div class="product-price">65.000 đ</div>
-          <button class="product-btn sage-btn"
-                  onclick="moModal('Cài Áo Hoa Len', '65.000 đ', 'thu-cong')">Đặt Hàng</button>
-        </div>
-      </div>
-    </div>
+  <!-- AUDIO -->
+  <audio id="bgMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg" />
+  </audio>
 
-  </div>
-</section>
-
-<!-- ══ CÁCH ĐẶT HÀNG ══ -->
-<section id="huong-dan">
-  <div class="section-header">
-    <div class="section-label">📋 Quy Trình</div>
-    <h2>Cách Đặt Hàng</h2>
-    <p>Chỉ vài bước đơn giản từ lúc chọn đến khi nhận hàng.</p>
-  </div>
-  <div class="steps-grid">
-    <div class="step-card">
-      <div class="step-icon">🛍️</div>
-      <div class="step-number">1</div>
-      <h3>Chọn Sản Phẩm</h3>
-      <p>Chọn món bạn thích từ danh mục Thú Bông hoặc Đồ Thủ Công ở trên.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-icon">📝</div>
-      <div class="step-number">2</div>
-      <h3>Điền Form</h3>
-      <p>Nhấn "Đặt Hàng", điền tên, địa chỉ và yêu cầu riêng (nếu có).</p>
-    </div>
-    <div class="step-card">
-      <div class="step-icon">💌</div>
-      <div class="step-number">3</div>
-      <h3>Xác Nhận Đơn</h3>
-      <p>Bạn sẽ nhận xác nhận qua email hoặc Zalo trong vòng 24 giờ.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-icon">📦</div>
-      <div class="step-number">4</div>
-      <h3>Nhận Hàng &amp; Thưởng Thức!</h3>
-      <p>Đơn hàng được đóng gói cẩn thận và giao đến bạn trong 3–5 ngày làm việc. Cảm ơn bạn đã đặt hàng✨</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══ ĐẶT HÀNG THEO YÊU CẦU ══ -->
-<div id="dat-hang" class="order-section">
-  <h2>Bạn muốn thiết kế riêng? 🎨</h2>
-  <p>Chúng mình rất thích nhận đơn đặt riêng! Hãy cho biết ý tưởng của bạn, màu sắc, nhân vật, hay thiết kế bất kỳ.</p>
-  <div class="order-btns">
-    <button class="btn btn-primary"
-            onclick="moModal('Đơn Đặt Riêng', 'Giá thương lượng', 'custom')">✏️ Đặt Theo Yêu Cầu</button>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3fwGA6tW3ACIUbTreqRpmLA09F1WW8AecTagxAF4SM0Tcdg/viewform?usp=header" target="_blank" class="btn btn-secondary">
-      📋 Mở Google Form
-    </a>
-    <!-- ↑ Thay href bằng link Google Form thật của bạn -->
-  </div>
-</div>
-
-<!-- ══ ĐÁNH GIÁ KHÁCH HÀNG ══ -->
-<section class="testimonials">
-  <div class="section-header">
-    <div class="section-label">💬 Đánh Giá</div>
-    <h2>Khách Hàng Nói Gì</h2>
-  </div>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-text">"Con thỏ tai dài ngoài đời còn dễ thương hơn ảnh! Mềm mịn và chắc chắn lắm. Mình đã đặt thêm một con nữa để tặng bạn."</div>
-      <div class="testi-author">— Linh N., Hà Nội</div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-text">"Mình nhờ làm móc khoá màu riêng và kết quả quá hoàn hảo. Phản hồi nhanh và đóng gói đẹp lắm!"</div>
-      <div class="testi-author">— Minh T., TP. Hồ Chí Minh</div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-text">"Mua bó hoa khô để bàn làm việc — đã 3 tháng rồi vẫn đẹp như mới. Rất đáng để thử!"</div>
-      <div class="testi-author">— Hana P., Đà Nẵng</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ CHÂN TRANG ══ -->
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="nav-logo"><span>🧸</span> Lung ta lung tung</div>
-      <p>✨ Handmade with Love. Mỗi sản phẩm đều mang theo một câu chuyện.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Cửa Hàng</h4>
-      <ul>
-        <li><a href="#thu-bong">Thú Bông</a></li>
-        <li><a href="#thu-cong">Đồ Thủ Công</a></li>
-        <li><a href="#dat-hang">Đặt Hàng Riêng</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Thông Tin</h4>
-      <ul>
-        <li><a href="#huong-dan">Cách Đặt Hàng</a></li>
-        <li><a href="#">Chính Sách Giao Hàng</a></li>
-        <li><a href="#">Chính Sách Đổi Trả</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Liên Hệ</h4>
-      <ul>
-        <li><a href="mailto:hellowelcome@cozypaws.vn">hellowelcome@cozypaws.vn</a></li>
-        <li><a href="https://zalo.me/0383529295">Zalo: 0383 529 295</a></li>
-        <li><a href="https://www.facebook.com/cozypaws">Trang Facebook</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">2026 Lung ta lung tung. ✨ Handmade with Love 💕</div>
-</footer>
-
-<!-- ══ MODAL ĐẶT HÀNG ══ -->
-<div class="modal-overlay" id="modalOverlay" onclick="dongModalNen(event)">
-  <div class="modal">
-    <button class="modal-close" onclick="dongModal()">✕</button>
-    <h3 id="modalTieuDe">Đặt Hàng</h3>
-    <p class="modal-sub" id="modalMoTa">Điền thông tin bên dưới, chúng mình sẽ xác nhận sớm nhất có thể.</p>
-
-    <!--
-      HƯỚNG DẪN KẾT NỐI GOOGLE FORM:
-      1. Tạo Google Form với các trường: Sản phẩm, Họ tên, Số điện thoại, Địa chỉ, Số lượng, Ghi chú, Email
-      2. Vào menu ⋮ → Lấy link điền sẵn → Điền thử → Sao chép URL
-      3. Lấy form ID và các entry.XXXXXXXXX từ URL đó
-      4. Thay thế GOOGLE_FORM_ID và các ENTRY_ID bên dưới
-    -->
-    <form id="donHang" onsubmit="guiDonHang(event)">
-      <div class="form-group">
-        <label>Sản phẩm *</label>
-        <input type="text" id="truongSanPham"
-               name="entry.1482119416"
-               class="field-readonly" readonly/>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Họ và tên *</label>
-          <input type="text" id="truongHoTen"
-                 name="entry.1854781838"
-                 placeholder="Nguyễn Văn A" required/>
-        </div>
-        <div class="form-group">
-          <label>Số điện thoại / Zalo *</label>
-          <input type="tel" id="truongSDT"
-                 name="entry.970618431"
-                 placeholder="09xx xxx xxx" required/>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Địa chỉ giao hàng *</label>
-        <input type="text" id="truongDiaChi"
-               name="entry.195132839"
-               placeholder="Số nhà, Phường/Xã, Quận/Huyện, Tỉnh/TP" required/>
-      </div>
-      <div class="form-group">
-        <label>Số lượng</label>
-        <select id="truongSoLuong" name="entry.466367913">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5+</option>
-        </select>
-      </div>
-      <div class="form-group" id="nhomGhiChu" style="display:none;">
-        <label>Yêu cầu / Ghi chú</label>
-        <textarea id="truongGhiChu"
-                  name="entry.452073048"
-                  placeholder="Màu sắc, kích cỡ, cá nhân hoá…"></textarea>
-      </div>
-      <div class="form-group">
-        <label>Email (tuỳ chọn — để nhận xác nhận đơn hàng)</label>
-        <input type="email" id="truongEmail"
-               name="entry.635134611"
-               placeholder="ban@example.com"/>
-      </div>
-      <button type="submit" class="form-submit" id="nutGui">🛍️ Gửi Đơn Hàng</button>
-      <p class="form-note">Chúng mình sẽ xác nhận qua điện thoại / Zalo trong vòng 24 giờ.</p>
-    </form>
-  </div>
-</div>
-
-<!-- ══ THÔNG BÁO TOAST ══ -->
-<div class="toast" id="toast">✅ Đặt hàng thành công! Chúng mình sẽ liên hệ sớm nhé 💕</div>
-
-<!-- ══ JAVASCRIPT ══ -->
-<script>
-  // ── Thay YOUR_FORM_ID bằng ID thật từ URL Google Form của bạn ──
-  const GOOGLE_FORM_ACTION =
-    "https://docs.google.com/forms/d/e/1FAIpQLSc3fwGA6tW3ACIUbTreqRpmLA09F1WW8AecTagxAF4SM0Tcdg/formResponse";
-
-  // ── Mở modal đặt hàng ──
-  function moModal(sanPham, gia, loai) {
-    document.getElementById('truongSanPham').value = sanPham + ' — ' + gia;
-    document.getElementById('modalTieuDe').textContent = 'Đặt hàng: ' + sanPham;
-    const hienGhiChu = loai === 'thu-cong' || loai === 'custom';
-    document.getElementById('nhomGhiChu').style.display = hienGhiChu ? 'block' : 'none';
-    document.getElementById('modalMoTa').textContent =
-      loai === 'custom'
-        ? 'Hãy mô tả ý tưởng của bạn, chúng mình sẽ báo giá sớm nhất!'
-        : 'Điền thông tin bên dưới, chúng mình sẽ xác nhận sớm nhất có thể.';
-    document.getElementById('modalOverlay').classList.add('open');
-  }
-
-  // ── Đóng modal ──
-  function dongModal() {
-    document.getElementById('modalOverlay').classList.remove('open');
-    document.getElementById('donHang').reset();
-    const btn = document.getElementById('nutGui');
-    btn.disabled = false;
-    btn.textContent = '🛍️ Gửi Đơn Hàng';
-  }
-
-  function dongModalNen(e) {
-    if (e.target === document.getElementById('modalOverlay')) dongModal();
-  }
-
-  // ── Gửi đơn qua hidden iframe (tránh CORS redirect của Google Forms) ──
-  function guiDonHang(e) {
-    e.preventDefault();
-    const btn = document.getElementById('nutGui');
-    btn.disabled = true;
-    btn.textContent = 'Đang gửi…';
-
-    const duLieu = {
-      'entry.1482119416': document.getElementById('truongSanPham').value,
-      'entry.1854781838':    document.getElementById('truongHoTen').value,
-      'entry.970618431':   document.getElementById('truongSDT').value,
-      'entry.195132839': document.getElementById('truongDiaChi').value,
-      'entry.466367913':     document.getElementById('truongSoLuong').value,
-      'entry.452073048':    document.getElementById('truongGhiChu').value,
-      'entry.635134611':   document.getElementById('truongEmail').value,
-    };
-
-    let iframe = document.getElementById('hiddenFrame');
-    if (!iframe) {
-      iframe = document.createElement('iframe');
-      iframe.id = 'hiddenFrame';
-      iframe.name = 'hiddenFrame';
-      iframe.style.display = 'none';
-      document.body.appendChild(iframe);
-    }
-
-    const tmpForm = document.createElement('form');
-    tmpForm.method = 'POST';
-    tmpForm.action = GOOGLE_FORM_ACTION;
-    tmpForm.target = 'hiddenFrame';
-
-    for (const [key, val] of Object.entries(duLieu)) {
-      const inp = document.createElement('input');
-      inp.type = 'hidden'; inp.name = key; inp.value = val;
-      tmpForm.appendChild(inp);
-    }
-    document.body.appendChild(tmpForm);
-    tmpForm.submit();
-    document.body.removeChild(tmpForm);
-
-    setTimeout(() => {
-      dongModal();
-      hienToast('✅ Đặt hàng thành công! Chúng mình sẽ liên hệ sớm nhé 💕');
-    }, 600);
-  }
-
-  // ── Hiển thị toast thông báo ──
-  function hienToast(noidung) {
-    const t = document.getElementById('toast');
-    t.textContent = noidung;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 4000);
-  }
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
